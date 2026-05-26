@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coreamy PDRN — Rejuvenescedor com DNA de Salmão</title>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2250459638819579');
+  fbq('init', '1302528715392927');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', { content_name: 'Coreamy PDRN' });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2250459638819579&ev=PageView&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1302528715392927&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --creme:  #faf6f0;
+      --creme2: #f2ebe0;
+      --branco: #ffffff;
+      --dourado: #b8904a;
+      --dourado-light: #d4aa6a;
+      --navy:   #1a1a2e;
+      --dark:   #2d2420;
+      --text:   #3d3530;
+      --muted:  #8a7f78;
+      --verde:  #2d7a4f;
+      --verde-bg: #e8f5ee;
+      --rosa-claro: #fdeef4;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--creme); line-height: 1.7; }
+
+    /* ── TIPOGRAFIA ── */
+    h1, h2 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+    h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 600; }
+
+    /* Cormorant Garamond — estatísticas, passos e badge (sem decimal, sem vírgula) */
+    .num,
+    .stat-number,
+    .step-num,
+    .guarantee-days,
+    .timer { font-family: 'Cormorant Garamond', Georgia, serif; font-variant-numeric: lining-nums; }
+
+    /* Poppins — preços e cards (alinhamento garantido em qualquer browser) */
+    .pricing-qty,
+    .price-main,
+    .price-cash,
+    .price-installment,
+    .price-original { font-family: 'Poppins', sans-serif; font-variant-numeric: lining-nums; letter-spacing: 0; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 80px 0; }
+
+    /* ── TIMER BAR ── */
+    .timer-bar {
+      background: linear-gradient(90deg, var(--dourado) 0%, var(--dourado-light) 50%, var(--dourado) 100%);
+      padding: 11px 0;
+      text-align: center;
+    }
+    .timer-bar p {
+      font-size: .82rem; font-weight: 600; color: var(--navy);
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+    .timer { font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      padding: 14px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,.35);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      color: #fff; letter-spacing: .06em;
+    }
+    .logo span { color: var(--dourado-light); }
+    .btn-header {
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-light));
+      color: #fff; padding: 10px 24px; border-radius: 30px;
+      font-weight: 600; font-size: .85rem; text-decoration: none;
+      text-transform: uppercase; letter-spacing: .08em;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-header:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184,144,74,.45); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 55%, #1a2a1f 100%);
+      color: #fff; padding: 100px 0 80px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 68% 50%, rgba(184,144,74,.18) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(184,144,74,.22); border: 1px solid var(--dourado);
+      color: var(--dourado-light); padding: 6px 16px; border-radius: 20px;
+      font-size: .78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .1em; margin-bottom: 24px;
+    }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); color: #fff; margin-bottom: 20px; }
+    .hero h1 em { color: var(--dourado-light); font-style: italic; }
+    .hero-sub { font-size: clamp(.95rem, 2vw, 1.1rem); color: rgba(255,255,255,.72); margin-bottom: 32px; font-weight: 300; }
+    .hero-bullets { list-style: none; margin-bottom: 40px; display: flex; flex-direction: column; gap: 12px; }
+    .hero-bullets li { display: flex; align-items: center; gap: 12px; font-size: .95rem; color: rgba(255,255,255,.88); }
+    .hero-bullets li::before { content: '✦'; color: var(--dourado-light); flex-shrink: 0; font-size: .78rem; }
+    .btn-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #c9a84c 0%, #e8c97a 50%, #c9a84c 100%);
+      color: var(--navy); padding: 18px 42px; border-radius: 50px;
+      font-weight: 700; font-size: clamp(.95rem, 2vw, 1.05rem);
+      text-decoration: none; text-transform: uppercase; letter-spacing: .08em;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 32px rgba(201,168,76,.42);
+    }
+    .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 14px 42px rgba(201,168,76,.55); }
+    .hero-img img {
+      width: 100%; border-radius: 18px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: var(--navy); padding: 18px 0; border-bottom: 1px solid rgba(184,144,74,.3); }
+    .trust-items { display: flex; justify-content: center; flex-wrap: wrap; gap: 28px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.82); font-size: .82rem; font-weight: 500; }
+    .trust-item .icon { color: var(--dourado-light); font-size: 1.1rem; }
+
+    /* ── STATS ── */
+    .stats-section { background: var(--branco); padding: 70px 0; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border: 1px solid #e8e0d5; border-radius: 16px; overflow: hidden;
+    }
+    .stat-card {
+      text-align: center; padding: 42px 20px; background: var(--branco);
+      border-right: 1px solid #e8e0d5; transition: background .3s;
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card:hover { background: var(--creme); }
+    .stat-number {
+      font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 700;
+      color: var(--dourado); line-height: 1; display: block; letter-spacing: -.02em;
+    }
+    .stat-label { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 10px; font-weight: 500; }
+
+    /* ── SECTION TITLE ── */
+    .section-title { text-align: center; margin-bottom: 58px; }
+    .section-tag {
+      display: inline-block; background: var(--creme2);
+      color: var(--dourado); border: 1px solid var(--dourado-light);
+      padding: 5px 14px; border-radius: 20px; font-size: .75rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px;
+    }
+    .section-title h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--navy); margin-bottom: 16px; }
+    .section-title p { color: var(--muted); max-width: 580px; margin: 0 auto; font-size: 1rem; }
+
+    /* ── BEFORE/AFTER ── */
+    .before-after { background: var(--creme); }
+    .ba-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .ba-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.14); }
+    .ba-img img { width: 100%; display: block; }
+    .ba-content h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--navy); margin-bottom: 18px; }
+    .ba-content p { color: var(--muted); margin-bottom: 24px; font-size: .97rem; }
+    .ba-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .ba-list li { display: flex; align-items: flex-start; gap: 12px; font-size: .94rem; }
+    .ba-list li .check {
+      width: 22px; height: 22px; background: var(--verde-bg); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--verde); font-size: .7rem; flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ── TECHNOLOGY ── */
+    .tech-section { background: var(--navy); }
+    .tech-section .section-title h2 { color: #fff; }
+    .tech-section .section-title p { color: rgba(255,255,255,.58); }
+    .tech-section .section-tag { background: rgba(184,144,74,.18); color: var(--dourado-light); border-color: rgba(184,144,74,.38); }
+    .tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .tech-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px; padding: 32px 28px; transition: background .3s, transform .3s;
+    }
+    .tech-card:hover { background: rgba(184,144,74,.13); transform: translateY(-4px); }
+    .tech-icon { font-size: 2rem; margin-bottom: 16px; }
+    .tech-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; color: var(--dourado-light); }
+    .tech-card p { font-size: .87rem; color: rgba(255,255,255,.62); line-height: 1.75; }
+
+    /* ── SCIENCE IMAGES ── */
+    .science-img-section { background: var(--creme); padding: 60px 0; }
+    .science-images { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .science-img-card { border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,.1); }
+    .science-img-card img { width: 100%; display: block; }
+    .img-caption { background: var(--navy); color: rgba(255,255,255,.78); padding: 14px 20px; font-size: .82rem; }
+
+    /* ── COMPARISON ── */
+    .comparison-section { background: var(--creme2); }
+    .table-wrapper { overflow-x: auto; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,.08); }
+    table { width: 100%; border-collapse: collapse; background: var(--branco); }
+    thead tr { background: var(--navy); }
+    thead th { padding: 20px 26px; text-align: left; color: #fff; font-size: .9rem; font-weight: 600; }
+    thead th:not(:first-child) { text-align: center; }
+    thead th.col-hl { color: var(--dourado-light); }
+    tbody tr { border-bottom: 1px solid #f0ebe3; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:nth-child(even) { background: var(--creme); }
+    tbody tr:hover { background: var(--rosa-claro); }
+    td { padding: 17px 26px; font-size: .9rem; }
+    td:not(:first-child) { text-align: center; }
+    td.yes { color: var(--verde); font-weight: 600; }
+    td.no  { color: #c0392b; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--creme); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .testimonial-card {
+      background: var(--branco); border-radius: 16px; padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
+    .testimonial-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .testimonial-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid var(--dourado-light); }
+    .testimonial-name { font-weight: 600; font-size: .94rem; color: var(--navy); }
+    .testimonial-age  { font-size: .76rem; color: var(--muted); }
+    .stars { color: var(--dourado); font-size: .88rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testimonial-text { font-size: .87rem; color: var(--text); line-height: 1.75; font-style: italic; }
+    .verified { display: inline-flex; align-items: center; gap: 5px; font-size: .71rem; color: var(--verde); font-weight: 600; margin-top: 14px; }
+
+    /* ── HOW IT WORKS ── */
+    .how-section { background: var(--branco); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 30px; }
+    .step-card { text-align: center; padding: 32px 22px; }
+    .step-num {
+      font-size: 5rem; font-weight: 700; color: var(--creme2); line-height: 1;
+      display: block; margin-bottom: -8px; letter-spacing: -.03em;
+    }
+    .step-card h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+    .step-card p  { font-size: .87rem; color: var(--muted); }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--navy); }
+    .pricing-section .section-title h2 { color: #fff; }
+    .pricing-section .section-title p  { color: rgba(255,255,255,.58); }
+    .pricing-section .section-tag { background: rgba(184,144,74,.18); color: var(--dourado-light); border-color: rgba(184,144,74,.38); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .pricing-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px; padding: 30px 20px; text-align: center;
+      position: relative; transition: transform .3s, border-color .3s;
+      display: flex; flex-direction: column;
+    }
+    .pricing-card:hover { transform: translateY(-6px); border-color: var(--dourado); }
+    .pricing-card.featured {
+      border-color: var(--dourado); background: rgba(184,144,74,.13);
+      transform: scale(1.03);
+    }
+    .pricing-card.featured:hover { transform: scale(1.03) translateY(-6px); }
+    .badge-top {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-light));
+      color: var(--navy); padding: 6px 18px; border-radius: 20px;
+      font-size: .71rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; white-space: nowrap;
+    }
+    .product-img { width: 100%; max-width: 120px; height: 148px; object-fit: contain; margin: 0 auto 18px; display: block; }
+    .pricing-label { font-size: .73rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.45); margin-bottom: 6px; min-height: 2.6em; display: flex; align-items: center; justify-content: center; }
+    .pricing-qty { font-size: 1.7rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 14px; }
+    .price-original { font-size: .82rem; color: rgba(255,255,255,.32); text-decoration: line-through; margin-bottom: 6px; font-weight: 400; }
+    .price-installment { font-size: .9rem; color: rgba(255,255,255,.55); margin-bottom: 2px; font-weight: 400; }
+    .price-main { font-size: clamp(2rem, 3.2vw, 2.5rem); font-weight: 700; color: var(--dourado-light); line-height: 1; letter-spacing: -.02em; }
+    .price-cash { font-size: 1.7rem; font-weight: 700; color: var(--dourado-light); font-family: 'Poppins', sans-serif; line-height: 1; letter-spacing: -.02em; }
+    .price-divider { font-size: .78rem; color: rgba(255,255,255,.28); margin: 8px 0; }
+    .free-ship { display: flex; align-items: center; justify-content: center; gap: 5px; font-size: .74rem; color: #5edc8e; font-weight: 600; min-height: 2rem; margin: 10px 0; }
+    .btn-buy {
+      display: block; width: 100%; padding: 15px; border-radius: 12px;
+      font-weight: 700; font-size: .88rem; text-transform: uppercase;
+      letter-spacing: .06em; text-decoration: none;
+      transition: transform .2s, box-shadow .2s; margin-top: auto;
+    }
+    .btn-buy-gold {
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-light));
+      color: var(--navy); box-shadow: 0 6px 24px rgba(184,144,74,.42);
+    }
+    .btn-buy-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(184,144,74,.58); }
+    .btn-buy-outline { background: transparent; border: 1.5px solid rgba(255,255,255,.22); color: rgba(255,255,255,.82); }
+    .btn-buy-outline:hover { border-color: var(--dourado); color: var(--dourado-light); transform: translateY(-2px); }
+    .anvisa-badge { margin-top: 14px; font-size: .69rem; color: rgba(255,255,255,.28); display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+    /* ── TRUST BADGES ── */
+    .full-trust { background: var(--branco); padding: 60px 0; }
+    .trust-badges-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 18px; }
+    .trust-badge-card { text-align: center; padding: 28px 14px; border: 1px solid #e8e0d5; border-radius: 14px; transition: box-shadow .3s; }
+    .trust-badge-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.08); }
+    .trust-badge-icon  { font-size: 2rem; margin-bottom: 10px; }
+    .trust-badge-title { font-size: .82rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .trust-badge-sub   { font-size: .71rem; color: var(--muted); }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--creme2); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 11px; }
+    .faq-item { background: var(--branco); border-radius: 12px; border: 1px solid #e8e0d5; overflow: hidden; }
+    .faq-question {
+      padding: 20px 24px; font-weight: 600; font-size: .94rem; color: var(--navy);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;
+    }
+    .faq-question::after { content: '+'; font-size: 1.4rem; color: var(--dourado); transition: transform .3s; flex-shrink: 0; margin-left: 12px; }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s; padding: 0 24px; font-size: .9rem; color: var(--muted); line-height: 1.78; }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+
+    /* ── GUARANTEE ── */
+    .guarantee-section { background: var(--navy); text-align: center; }
+    .guarantee-inner { max-width: 680px; margin: 0 auto; }
+    .guarantee-badge {
+      width: 128px; height: 128px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--dourado), var(--dourado-light));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 32px; text-align: center; line-height: 1.3;
+      box-shadow: 0 10px 42px rgba(184,144,74,.42); flex-direction: column;
+    }
+    .guarantee-days { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .guarantee-badge span { font-size: .75rem; font-weight: 700; color: var(--navy); letter-spacing: .06em; text-transform: uppercase; }
+    .guarantee-section h2 { color: #fff; margin-bottom: 20px; }
+    .guarantee-section p  { color: rgba(255,255,255,.68); margin-bottom: 16px; font-size: .95rem; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1f3d 100%);
+      text-align: center; padding: 100px 0; color: #fff;
+    }
+    .final-cta h2 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .final-cta p  { color: rgba(255,255,255,.62); margin-bottom: 40px; font-size: 1.05rem; }
+    .final-cta .section-tag { background: rgba(184,144,74,.2); color: var(--dourado-light); border-color: rgba(184,144,74,.4); }
+
+    /* ── FOOTER ── */
+    footer { background: #0f0f1a; color: rgba(255,255,255,.38); text-align: center; padding: 32px 20px; font-size: .77rem; line-height: 2; }
+    footer a { color: rgba(255,255,255,.38); text-decoration: none; }
+    footer a:hover { color: var(--dourado-light); }
+
+    /* ── WHATSAPP ── */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px; background: #25d366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 26px rgba(37,211,102,.52); transition: transform .3s, box-shadow .3s; text-decoration: none;
+    }
+    .whatsapp-float:hover { transform: scale(1.12); box-shadow: 0 10px 38px rgba(37,211,102,.62); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner        { grid-template-columns: 1fr; }
+      .hero-img          { display: none; }
+      .stats-grid        { grid-template-columns: repeat(2,1fr); }
+      .tech-grid         { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid      { grid-template-columns: 1fr 1fr; }
+      .trust-badges-grid { grid-template-columns: repeat(3,1fr); }
+      .ba-wrapper        { grid-template-columns: 1fr; }
+      .steps-grid        { grid-template-columns: 1fr 1fr; }
+      .science-images    { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+    }
+    @media (max-width: 600px) {
+      section              { padding: 60px 0; }
+      .tech-grid           { grid-template-columns: 1fr; }
+      .testimonials-grid   { grid-template-columns: 1fr; }
+      .pricing-grid        { grid-template-columns: 1fr; }
+      .stats-grid          { grid-template-columns: 1fr 1fr; }
+      .trust-badges-grid   { grid-template-columns: repeat(2,1fr); }
+      .steps-grid          { grid-template-columns: 1fr; }
+      .trust-items         { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── TIMER ── -->
+<div class="timer-bar">
+  <p>⚡ Oferta por tempo limitado — Encerra em: <span class="timer" id="countdown">04:37:22</span></p>
+</div>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">Core<span>amy</span></div>
+    <a href="#kits" class="btn-header">Comprar Agora</a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">✦ Tecnologia PDRN · DNA de Salmão</div>
+        <h1>Rejuvenesça <em>10 Anos</em><br>com o DNA de Salmão</h1>
+        <p class="hero-sub">O Truque Secreto das Atrizes Coreanas Para uma <strong style="color:#fff">"Pele de Vidro"</strong> em menos de 90 dias</p>
+        <ul class="hero-bullets">
+          <li>Efeito lifting natural — zero aparência artificial</li>
+          <li>Tecnologia de alta absorção celular</li>
+          <li>Suaviza visivelmente rugas profundas e linhas de expressão</li>
+        </ul>
+        <a href="#kits" class="btn-cta">Descobrir o Efeito →</a>
+      </div>
+      <div class="hero-img">
+        <img src="https://coreamy.com/confident-woman.jpg" alt="Resultado Coreamy PDRN" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><span class="icon">🛡️</span> Testado Dermatologicamente</div>
+      <div class="trust-item"><span class="icon">🔬</span> ANVISA Aprovado</div>
+      <div class="trust-item"><span class="icon">🚚</span> Frete Grátis (3+ frascos)</div>
+      <div class="trust-item"><span class="icon">🔒</span> Compra 100% Segura</div>
+      <div class="trust-item"><span class="icon">↩️</span> Garantia de 90 dias</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">95%</span>
+        <span class="stat-label">Compatibilidade com a genética humana</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">90</span>
+        <span class="stat-label">Dias para pele de vidro visível</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">10×</span>
+        <span class="stat-label">Mais eficaz que cremes tradicionais</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Aprovado em testes clínicos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEFORE/AFTER ── -->
+<section class="before-after">
+  <div class="container">
+    <div class="ba-wrapper">
+      <div class="ba-img">
+        <img src="https://coreamy.com/antes-e-depois.jpg" alt="Antes e Depois Coreamy PDRN" loading="lazy">
+      </div>
+      <div class="ba-content">
+        <div class="section-tag">Resultados Reais</div>
+        <h2>Transformação visível<br>em semanas</h2>
+        <p>O PDRN da Coreamy age nas camadas mais profundas da pele, estimulando a regeneração celular natural para resultados que falam por si.</p>
+        <ul class="ba-list">
+          <li><span class="check">✓</span> Rugas e linhas de expressão visivelmente suavizadas</li>
+          <li><span class="check">✓</span> Firmeza e contorno facial restaurados</li>
+          <li><span class="check">✓</span> Luminosidade e "pele de vidro" em menos de 90 dias</li>
+          <li><span class="check">✓</span> Poros minimizados e textura uniforme</li>
+          <li><span class="check">✓</span> Zero aparência artificial ou "congelada"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TECHNOLOGY ── -->
+<section class="tech-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">A Ciência por Trás</div>
+      <h2>Como o PDRN<br>Transforma sua Pele</h2>
+      <p>Tecnologia extraída do DNA de salmão selvagem — o segredo das clínicas premium da Coreia do Sul.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-icon">🧬</div>
+        <h3>DNA Raro & Biocompatível</h3>
+        <p>95% de compatibilidade com a genética humana. Seu organismo reconhece e absorve o PDRN como se fosse parte de si mesmo.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">⚗️</div>
+        <h3>Regeneração Celular Ativa</h3>
+        <p>Estimula a produção de colágeno e elastina nas camadas mais profundas da derme, onde os cremes comuns simplesmente não chegam.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">✨</div>
+        <h3>O Efeito Pele de Vidro</h3>
+        <p>O fenômeno "glass skin" das atrizes coreanas — pele translúcida, luminosa e com reflexo espelhado — agora acessível em casa.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🔬</div>
+        <h3>Alta Absorção Celular</h3>
+        <p>Tecnologia de microencapsulação que garante penetração profunda, maximizando a eficácia de cada aplicação.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🌿</div>
+        <h3>Fórmula Limpa</h3>
+        <p>Sem petroquímicos, sem parabenos. Cruelty-free, vegano e aprovado pelos mais rigorosos testes de segurança dermatológica.</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🏭</div>
+        <h3>Produção Nacional Premium</h3>
+        <p>Fabricado no Brasil com matéria-prima de grau internacional, com aprovação ANVISA e logística rápida para todo o país.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCIENCE IMAGES ── -->
+<section class="science-img-section">
+  <div class="container">
+    <div class="science-images">
+      <div class="science-img-card">
+        <img src="https://coreamy.com/OIP.jpg" alt="DNA de Salmão — Fonte do PDRN" loading="lazy">
+        <div class="img-caption">🐟 DNA de Salmão Selvagem — Fonte do PDRN Coreamy</div>
+      </div>
+      <div class="science-img-card">
+        <img src="https://coreamy.com/Salm%C3%A3o.jpg" alt="Tecnologia PDRN Coreamy" loading="lazy">
+        <div class="img-caption">🔬 Evolução da Tecnologia PDRN para Rejuvenescimento</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPARISON ── -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">Comparativo</div>
+      <h2>PDRN vs. Métodos Tradicionais</h2>
+      <p>Veja por que o Coreamy supera cada alternativa disponível no mercado.</p>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th class="col-hl">✦ Coreamy PDRN</th>
+            <th>Cremes Comuns</th>
+            <th>Procedimentos Clínicos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sensação</strong></td>
+            <td class="yes">Zero agulhas, biocompatível</td>
+            <td class="no">Superficial, sem penetração real</td>
+            <td class="no">Invasivo, traumático</td>
+          </tr>
+          <tr>
+            <td><strong>Resultado</strong></td>
+            <td class="yes">Regeneração celular contínua</td>
+            <td class="no">Hidratação temporária</td>
+            <td class="no">Recuperação lenta com downtime</td>
+          </tr>
+          <tr>
+            <td><strong>Expressão Natural</strong></td>
+            <td class="yes">Movimentos preservados</td>
+            <td class="yes">Mantida</td>
+            <td class="no">Risco de aparência "congelada"</td>
+          </tr>
+          <tr>
+            <td><strong>Custo</strong></td>
+            <td class="yes">Rotina em casa, fração do valor</td>
+            <td>R$ 80 – R$ 400/mês</td>
+            <td class="no">R$ 1.500 – R$ 5.000/sessão</td>
+          </tr>
+          <tr>
+            <td><strong>Praticidade</strong></td>
+            <td class="yes">Em casa, qualquer horário</td>
+            <td class="yes">Fácil</td>
+            <td class="no">Agendamento em clínica</td>
+          </tr>
+          <tr>
+            <td><strong>ANVISA</strong></td>
+            <td class="yes">✓ Aprovado</td>
+            <td>Variável</td>
+            <td class="yes">✓ Aprovado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">Depoimentos Verificados</div>
+      <h2>O Que Nossas Clientes<br>Estão Dizendo</h2>
+      <p>Resultados reais de mulheres reais. Sem filtros, sem edição.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-carla.jpg" alt="Mariana S." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Mariana S.</div>
+            <div class="testimonial-age">48 anos · São Paulo, SP</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Cancelei as consultas na dermatologista. Em 6 semanas consegui uma firmeza que não via há 10 anos. Minha filha perguntou o que eu fiz diferente!"</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-renata.jpg" alt="Luciana T." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Luciana T.</div>
+            <div class="testimonial-age">42 anos · Rio de Janeiro, RJ</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"A pele fica com um brilho espelhado que eu nunca consegui com nenhum produto. Os poros sumiram e as linhas finas ao redor dos olhos praticamente desapareceram."</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-gersiane.jpg" alt="Sandra M." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Sandra M.</div>
+            <div class="testimonial-age">55 anos · Belo Horizonte, MG</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Meu rosto voltou a ter contorno. O óvalo do rosto ficou definido de novo, como quando eu tinha 40. Marido notou antes de mim!"</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-vera.jpg" alt="Beatriz L." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Beatriz L.</div>
+            <div class="testimonial-age">51 anos · Curitiba, PR</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Tinha medo de ficar com aquela cara parada, artificial. Com o Coreamy o resultado é completamente natural — só que rejuvenescida. Perfeito."</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-marisa.jpg" alt="Carmem V." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Carmem V.</div>
+            <div class="testimonial-age">59 anos · Salvador, BA</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Usei cremes caros a vida toda e nenhum chegou perto. O Coreamy faz algo que os outros não fazem — age de dentro para fora. Diferença em 30 dias."</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://coreamy.com/review-maria.jpg" alt="Helena A." class="testimonial-avatar">
+          <div>
+            <div class="testimonial-name">Helena A.</div>
+            <div class="testimonial-age">62 anos · Porto Alegre, RS</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Todo dia acordo e vejo uma melhora. É acumulativo. No 90º dia minha pele estava irreconhecível — no bom sentido. Vale cada centavo investido."</p>
+        <div class="verified">✓ Compra verificada</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">Como Usar</div>
+      <h2>Simples como sua Rotina Diária</h2>
+      <p>Sem equipamentos, sem técnica especial. Apenas 3 passos para sua transformação.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">01</span>
+        <h3>Limpe o rosto</h3>
+        <p>Aplique sobre pele limpa, seca e sem maquiagem — de manhã e à noite para resultados otimizados.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">02</span>
+        <h3>Aplique o Coreamy</h3>
+        <p>Pequena quantidade em movimentos ascendentes e circulares. O PDRN é absorvido em segundos.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">03</span>
+        <h3>Repita por 90 dias</h3>
+        <p>A regeneração é cumulativa. Fotografe semanalmente e acompanhe sua transformação dia após dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="pricing-section" id="kits">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">Escolha seu Kit</div>
+      <h2>Invista na Sua<br>Melhor Versão</h2>
+      <p>Quanto mais frascos, maior a economia — e mais completo o seu tratamento.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- 1 frasco -->
+      <div class="pricing-card">
+        <div class="pricing-label">Para Conhecer</div>
+        <img src="https://coreamy.com/1-PDRN.png" alt="1 Frasco Coreamy" class="product-img" loading="lazy">
+        <div class="pricing-qty">01 Frasco</div>
+        <div class="price-original">De R$ 247,00</div>
+        <div class="price-installment">12× de</div>
+        <div class="price-main">R$ 13,75</div>
+        <div class="price-divider">— ou —</div>
+        <div class="price-installment">à vista por apenas</div>
+        <div class="price-cash">R$ 137</div>
+        <div class="free-ship">🚚 Frete Grátis</div>
+        <a href="https://seguro.payt.com.br/a/K0owb9OmsVzPjvna" class="btn-buy btn-buy-outline" onclick="fbq('track','InitiateCheckout');">Comprar Agora</a>
+        <div class="anvisa-badge">🔒 Pagamento Seguro · ANVISA</div>
+      </div>
+
+      <!-- 3 frascos -->
+      <div class="pricing-card featured">
+        <div class="badge-top">⭐ Mais Vendido</div>
+        <div class="pricing-label">Kit Resultado</div>
+        <img src="https://coreamy.com/3-PDRN-1.png" alt="3 Frascos Coreamy" class="product-img" loading="lazy">
+        <div class="pricing-qty">03 Frascos</div>
+        <div class="price-original">De R$ 497,00</div>
+        <div class="price-installment">12× de</div>
+        <div class="price-main">R$ 27,81</div>
+        <div class="price-divider">— ou —</div>
+        <div class="price-installment">à vista por apenas</div>
+        <div class="price-cash">R$ 277</div>
+        <div class="free-ship">🚚 Frete Grátis</div>
+        <a href="https://seguro.payt.com.br/a/E0eMwBalc2yYGv7K" class="btn-buy btn-buy-gold" onclick="fbq('track','InitiateCheckout');">Quero Este Kit →</a>
+        <div class="anvisa-badge">🔒 Pagamento Seguro · ANVISA</div>
+      </div>
+
+      <!-- 5 frascos -->
+      <div class="pricing-card">
+        <div class="badge-top">Melhor Custo-Benefício</div>
+        <div class="pricing-label">Kit Completo</div>
+        <img src="https://coreamy.com/5-PDRN.png" alt="5 Frascos Coreamy" class="product-img" loading="lazy">
+        <div class="pricing-qty">05 Frascos</div>
+        <div class="price-original">De R$ 697,00</div>
+        <div class="price-installment">12× de</div>
+        <div class="price-main">R$ 39,85</div>
+        <div class="price-divider">— ou —</div>
+        <div class="price-installment">à vista por apenas</div>
+        <div class="price-cash">R$ 397</div>
+        <div class="free-ship">🚚 Frete Grátis</div>
+        <a href="https://seguro.payt.com.br/a/xQW35GLOH2Z73oGg" class="btn-buy btn-buy-outline" onclick="fbq('track','InitiateCheckout');">Comprar Agora</a>
+        <div class="anvisa-badge">🔒 Pagamento Seguro · ANVISA</div>
+      </div>
+
+      <!-- 12 frascos -->
+      <div class="pricing-card">
+        <div class="badge-top">Tratamento Anual</div>
+        <div class="pricing-label">Rejuvenescimento Completo</div>
+        <img src="https://coreamy.com/12-PDRN.png" alt="12 Frascos Coreamy" class="product-img" loading="lazy">
+        <div class="pricing-qty">12 Frascos</div>
+        <div class="price-original">De R$ 1.497,00</div>
+        <div class="price-installment">12× de</div>
+        <div class="price-main">R$ 72,09</div>
+        <div class="price-divider">— ou —</div>
+        <div class="price-installment">à vista por apenas</div>
+        <div class="price-cash">R$ 697</div>
+        <div class="free-ship">🚚 Frete Grátis + Bônus</div>
+        <a href="https://seguro.payt.com.br/a/M3WLV9jrtMJYpoAQ" class="btn-buy btn-buy-outline" onclick="fbq('track','InitiateCheckout');">Comprar Agora</a>
+        <div class="anvisa-badge">🔒 Pagamento Seguro · ANVISA</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BADGES ── -->
+<section class="full-trust">
+  <div class="container">
+    <div class="trust-badges-grid">
+      <div class="trust-badge-card">
+        <div class="trust-badge-icon">🛡️</div>
+        <div class="trust-badge-title">Testado Dermato</div>
+        <div class="trust-badge-sub">Aprovado em testes clínicos de segurança</div>
+      </div>
+      <div class="trust-badge-card">
+        <div class="trust-badge-icon">🔬</div>
+        <div class="trust-badge-title">Sem Contraindicações</div>
+        <div class="trust-badge-sub">Seguro para todos os tipos de pele</div>
+      </div>
+      <div class="trust-badge-card">
+        <div class="trust-badge-icon">🔒</div>
+        <div class="trust-badge-title">Site Seguro</div>
+        <div class="trust-badge-sub">Criptografia SSL em todas as compras</div>
+      </div>
+      <div class="trust-badge-card">
+        <div class="trust-badge-icon">↩️</div>
+        <div class="trust-badge-title">90 Dias de Garantia</div>
+        <div class="trust-badge-sub">Devolução integral sem burocracia</div>
+      </div>
+      <div class="trust-badge-card">
+        <div class="trust-badge-icon">🚚</div>
+        <div class="trust-badge-title">Entrega Rastreável</div>
+        <div class="trust-badge-sub">Acompanhe seu pedido em tempo real</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-tag">Dúvidas Frequentes</div>
+      <h2>Perguntas & Respostas</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Posso usar junto com minha rotina de skincare atual?</div>
+        <div class="faq-answer">Sim! O Coreamy PDRN é compatível com qualquer rotina. Aplique após a limpeza e antes do protetor solar. Pode continuar usando seus outros produtos normalmente.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Em quanto tempo verei resultados?</div>
+        <div class="faq-answer">Os primeiros resultados — mais luminosidade e textura uniforme — costumam aparecer nas primeiras 2–3 semanas. O efeito pele de vidro completo se desenvolve de forma cumulativa ao longo dos 90 dias de uso contínuo.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Os resultados são permanentes?</div>
+        <div class="faq-answer">O PDRN estimula regeneração real das células da pele, então os resultados são duradouros. Para manutenção do efeito pleno, recomendamos continuar o uso após os primeiros 90 dias.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">O produto tem aprovação da ANVISA?</div>
+        <div class="faq-answer">Sim. O Coreamy PDRN é registrado e aprovado pela ANVISA e atende todos os requisitos do Ministério da Saúde brasileiro.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Tem alguma contraindicação?</div>
+        <div class="faq-answer">O produto é seguro para todos os tipos de pele. Em caso de alergia conhecida a frutos do mar, consulte seu dermatologista antes de usar. Não indicado para gestantes sem orientação médica.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Qual o prazo de entrega?</div>
+        <div class="faq-answer">Enviamos em até 2 dias úteis após confirmação do pagamento. O prazo de entrega varia de 5 a 12 dias úteis dependendo da região. Todo pedido tem código de rastreio.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Posso usar maquiagem após a aplicação?</div>
+        <div class="faq-answer">Sim! Aguarde 3–5 minutos após a absorção e aplique sua maquiagem normalmente. O Coreamy melhora a fixação e o acabamento da maquiagem.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">Como é a textura do produto?</div>
+        <div class="faq-answer">O Coreamy tem textura leve, sérica, com absorção ultrarrápida. Não deixa resíduo oleoso nem pegajoso — a pele fica com toque aveludado e pronta para a próxima etapa da rotina.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── GUARANTEE ── -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge">
+        <div class="guarantee-days">90</div>
+        <span>Dias de Garantia</span>
+      </div>
+      <h2>O Desafio dos 90 Dias</h2>
+      <p>Acreditamos tão profundamente nos resultados do Coreamy PDRN que oferecemos garantia total de 90 dias.</p>
+      <p>Se após 90 dias de uso contínuo (2× ao dia) você não conquistar o efeito pele de vidro, devolvemos <strong style="color:var(--dourado-light)">100% do seu investimento</strong> — sem perguntas, sem burocracia.</p>
+      <p style="font-size:.83rem;color:rgba(255,255,255,.38);margin-top:20px">*Sujeito à apresentação de registro fotográfico do período de uso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="container">
+    <div class="section-tag">Última Chamada</div>
+    <h2>Sua Pele de Vidro<br>Começa Hoje</h2>
+    <p>Junte-se às milhares de mulheres que já descobriram o segredo das atrizes coreanas.</p>
+    <a href="#kits" class="btn-cta">Escolher Meu Kit →</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <p><strong style="color:rgba(255,255,255,.55);font-family:'Playfair Display',serif;font-size:1.1rem">Coreamy</strong></p>
+    <p style="margin-top:8px">Este produto não é destinado a diagnosticar, tratar, curar ou prevenir qualquer doença.<br>Os resultados podem variar de pessoa para pessoa.</p>
+    <p style="margin-top:12px">
+      <a href="#">Política de Privacidade</a> ·
+      <a href="#">Termos de Uso</a> ·
+      <a href="#">Contato</a>
+    </p>
+    <p style="margin-top:10px">© 2025 Coreamy. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- ── WHATSAPP ── -->
+<a href="https://wa.me/553791220894?text=Olá%2C%20tenho%20dúvidas%20sobre%20o%20PDRN%20da%20Coreamy." class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+  // Countdown timer
+  (function () {
+    const key = 'coreamy_timer_end';
+    let end = localStorage.getItem(key);
+    if (!end) {
+      end = Date.now() + (4 * 3600 + 37 * 60 + 22) * 1000;
+      localStorage.setItem(key, end);
+    }
+    end = Number(end);
+    function tick() {
+      const diff = Math.max(0, end - Date.now());
+      const h = Math.floor(diff / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      const el = document.getElementById('countdown');
+      if (el) el.textContent =
+        String(h).padStart(2, '0') + 'h ' +
+        String(m).padStart(2, '0') + 'min ' +
+        String(s).padStart(2, '0') + 'seg';
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
