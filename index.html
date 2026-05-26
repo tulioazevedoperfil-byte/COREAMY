@@ -28,6 +28,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    @property --glow-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes border-spin {
+      to { --glow-angle: 360deg; }
+    }
+    @keyframes outer-glow-pulse {
+      0%, 100% { box-shadow: 0 0 18px 4px rgba(212,170,106,.28), 0 0 40px 10px rgba(212,170,106,.1); }
+      50%       { box-shadow: 0 0 32px 10px rgba(212,170,106,.55), 0 0 70px 20px rgba(255,220,100,.22); }
+    }
+
     :root {
       --creme:  #faf6f0;
       --creme2: #f2ebe0;
@@ -271,8 +284,23 @@
     }
     .pricing-card:hover { transform: translateY(-6px); border-color: var(--dourado); }
     .pricing-card.featured {
-      border-color: var(--dourado); background: rgba(184,144,74,.13);
+      border: 3px solid transparent;
+      background:
+        linear-gradient(rgba(184,144,74,.13), rgba(184,144,74,.13)) padding-box,
+        conic-gradient(
+          from var(--glow-angle),
+          rgba(184,144,74,.15) 0%,
+          rgba(184,144,74,.15) 30%,
+          rgba(212,170,106,.5)  40%,
+          rgba(255,220,100,.95) 47%,
+          rgba(255,245,180,1)   50%,
+          rgba(255,220,100,.95) 53%,
+          rgba(212,170,106,.5)  60%,
+          rgba(184,144,74,.15) 70%,
+          rgba(184,144,74,.15) 100%
+        ) border-box;
       transform: scale(1.03);
+      animation: border-spin 2.8s linear infinite, outer-glow-pulse 2.8s ease-in-out infinite;
     }
     .pricing-card.featured:hover { transform: scale(1.03) translateY(-6px); }
     .badge-top {
@@ -380,16 +408,42 @@
       .steps-grid        { grid-template-columns: 1fr 1fr; }
       .science-images    { grid-template-columns: 1fr; }
       .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-6px); }
     }
     @media (max-width: 600px) {
-      section              { padding: 60px 0; }
-      .tech-grid           { grid-template-columns: 1fr; }
-      .testimonials-grid   { grid-template-columns: 1fr; }
-      .pricing-grid        { grid-template-columns: 1fr; }
-      .stats-grid          { grid-template-columns: 1fr 1fr; }
-      .trust-badges-grid   { grid-template-columns: repeat(2,1fr); }
-      .steps-grid          { grid-template-columns: 1fr; }
-      .trust-items         { gap: 14px; }
+      section { padding: 50px 0; }
+
+      /* Header */
+      .logo       { font-size: 1.3rem; }
+      .btn-header { padding: 8px 14px; font-size: .76rem; }
+
+      /* Trust bar */
+      .trust-items { gap: 10px 18px; }
+      .trust-item  { font-size: .74rem; }
+
+      /* Seções */
+      .stats-grid        { grid-template-columns: 1fr 1fr; }
+      .tech-grid         { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .steps-grid        { grid-template-columns: 1fr; }
+      .trust-badges-grid { grid-template-columns: repeat(2,1fr); }
+      .science-images    { grid-template-columns: 1fr; }
+
+      /* ── OFERTAS: 2 colunas lado a lado ── */
+      .pricing-grid      { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .pricing-card      { padding: 22px 10px 18px; }
+      .pricing-label     { font-size: .6rem; min-height: 2.4em; letter-spacing: .06em; }
+      .product-img       { height: 86px; max-width: 86px; margin-bottom: 12px; }
+      .pricing-qty       { font-size: 1.15rem; margin-bottom: 10px; }
+      .price-original    { font-size: .7rem; }
+      .price-installment { font-size: .76rem; }
+      .price-main        { font-size: 1.35rem; }
+      .price-cash        { font-size: 1.2rem; }
+      .price-divider     { font-size: .68rem; margin: 4px 0; }
+      .free-ship         { font-size: .64rem; min-height: 1.5rem; margin: 6px 0; gap: 3px; }
+      .btn-buy           { padding: 11px 6px; font-size: .72rem; letter-spacing: .02em; margin-top: auto; }
+      .anvisa-badge      { font-size: .58rem; margin-top: 10px; }
+      .badge-top         { font-size: .6rem; padding: 4px 10px; top: -12px; }
     }
   </style>
 </head>
